@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: torounit/jupyterlab
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - 8888:8888
+    volumes:
+      - ${PWD}/work:/home/jovyan/src
